@@ -1,0 +1,34 @@
+{
+    "name": "prisma-model-events-extension",
+    "version": "1.0.0",
+    "description": "A Prisma extension used to dispatch events before and/or after operations on models",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "prepublish": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/constantinmaes/prisma-model-events-extension.git"
+    },
+    "keywords": [
+        "prisma",
+        "events",
+        "hooks"
+    ],
+    "author": "Constantin Maes",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/constantinmaes/prisma-model-events-extension/issues"
+    },
+    "homepage": "https://github.com/constantinmaes/prisma-model-events-extension#readme",
+    "devDependencies": {
+        "ts-node": "^10.9.2",
+        "typescript": "^5.5.2"
+    },
+    "dependencies": {
+        "@prisma/client": "^5.16.1",
+        "eventemitter2": "^6.4.9"
+    }
+}
