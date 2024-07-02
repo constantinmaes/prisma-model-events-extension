@@ -1,4 +1,5 @@
 import * as EventEmitter2 from 'eventemitter2';
+
 import { Prisma } from '@prisma/client';
 
 export type PrismaAction =
