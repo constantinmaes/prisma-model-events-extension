@@ -61,7 +61,7 @@ export class PrismaModelEventsExtension {
                     const modelMatch = config.find((c) => c.model === model);
                     const op = operation as PrismaAction;
 
-                    if (!modelMatch || modelMatch.actions.includes(op)) {
+                    if (!modelMatch || !modelMatch.actions.includes(op)) {
                         return query(args);
                     }
 
