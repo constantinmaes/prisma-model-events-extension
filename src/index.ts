@@ -20,6 +20,10 @@ export type PrismaAction =
 
 export type When = 'before' | 'after';
 
+export interface EventEmitter {
+    emit(event: symbol | string, ...values: any[]): boolean;
+}
+
 export interface ModelEventsConfig {
     model: string;
     actions: PrismaAction[];
@@ -33,20 +37,17 @@ const getEventName = (
 ) => `${when}.${model?.toLowerCase()}.${action.toLowerCase()}`;
 
 export class PrismaModelEventsExtension {
-    private eventEmitter: EventEmitter2.EventEmitter2;
+    private eventEmitter: EventEmitter;
 
     constructor(
         private config: ModelEventsConfig[],
-        eventEmitter: EventEmitter2.EventEmitter2,
+        eventEmitter: EventEmitter,
     ) {
         this.eventEmitter = eventEmitter;
     }
 
-    static setup(config: ModelEventsConfig[]) {
-        return new PrismaModelEventsExtension(
-            config,
-            new EventEmitter2.EventEmitter2(),
-        );
+    static setup(config: ModelEventsConfig[], eventEmitter: EventEmitter) {
+        return new PrismaModelEventsExtension(config, eventEmitter);
     }
 
     getExtension() {
