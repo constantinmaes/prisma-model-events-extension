@@ -1,6 +1,6 @@
 {
     "name": "prisma-model-events-extension",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A Prisma extension used to dispatch events before and/or after operations on models",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
